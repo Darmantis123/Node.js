@@ -1,0 +1,4 @@
+mkdir discord-phish
+cd discord-phish
+npm init -y
+npm install express axios heroku discord-api
